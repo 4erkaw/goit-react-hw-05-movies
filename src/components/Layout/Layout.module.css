@@ -1,0 +1,27 @@
+.header {
+  padding: 40px;
+  border: 1px solid grey;
+  background-image: url(../Images/headerBg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
+  color: #2a363b;
+  font-size: 18px;
+  transition: color 250ms linear;
+}
+
+.link:hover {
+  color: #2196f3;
+}
+
+.active {
+  composes: link;
+  color: #2196f3;
+}
