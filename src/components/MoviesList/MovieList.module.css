@@ -1,0 +1,40 @@
+.list {
+  display: flex;
+  margin: -15px;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item {
+  width: calc(100% / 5 - 32px);
+  margin: 15px;
+  display: flex;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  transition: transform 250ms linear;
+  box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.75);
+}
+
+.item > a {
+  color: black;
+  text-decoration: none;
+  transition: color 250ms linear;
+}
+
+.item > a:hover,
+.item > a:focus {
+  color: rgb(81, 43, 184);
+}
+
+.movieTitle {
+  padding: 5px;
+}
+
+.item:hover,
+.item:focus {
+  transform: scale(1.02);
+}

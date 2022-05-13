@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import s from './Layout.module.css';
+import Container from 'components/Container';
 
 const setActive = ({ isActive }) => (isActive ? s.active : s.link);
 
@@ -16,7 +17,9 @@ export default function NavBar() {
           </NavLink>
         </nav>
       </header>
-      <Outlet />
+      <Container>
+        <Outlet />
+      </Container>
     </>
   );
 }

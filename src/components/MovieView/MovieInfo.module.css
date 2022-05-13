@@ -1,0 +1,30 @@
+.wrapper {
+  padding: 5px;
+  border-bottom: 1px solid rgb(87, 87, 87);
+}
+
+.cardWrapper {
+  composes: wrapper;
+  display: flex;
+}
+
+.item {
+  margin-bottom: 10px;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.contentWrapper {
+  margin-left: 20px;
+}
+
+.text,
+.title {
+  margin-bottom: 10px;
+}
+
+.contentWrapper > ul > li:not(:last-child) {
+  margin-bottom: 5px;
+}

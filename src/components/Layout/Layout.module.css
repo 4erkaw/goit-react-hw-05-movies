@@ -1,7 +1,7 @@
 .header {
-  padding: 40px;
-  border: 1px solid grey;
-  background-image: url(../Images/headerBg.jpeg);
+  padding: 40px 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-image: url(../Images/imageBg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-color: transparent;
@@ -18,10 +18,10 @@
 }
 
 .link:hover {
-  color: #2196f3;
+  color: #90ee90;
 }
 
 .active {
   composes: link;
-  color: #2196f3;
+  color: #adff2f;
 }
