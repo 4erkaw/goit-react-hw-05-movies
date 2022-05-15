@@ -25,13 +25,14 @@
   transition: color 250ms linear;
 }
 
-.item > a:hover,
-.item > a:focus {
-  color: rgb(81, 43, 184);
+.item > a:hover .movieTitle,
+.item > a:focus .movieTitle {
+  color: #daa520;
 }
 
 .movieTitle {
   padding: 5px;
+  color: #c0c0c0;
 }
 
 .item:hover,

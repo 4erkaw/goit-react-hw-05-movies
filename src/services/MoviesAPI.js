@@ -21,12 +21,12 @@ export async function fetchMovieCast(id) {
 }
 export async function fetchMovieReviews(id) {
   const res = await axios.get(`/movie/${id}/reviews?api_key=${KEY}`);
-  return res.data;
+  return res.data.results;
 }
 
-export async function fetchMovieByKeyword(query, page) {
+export async function fetchMoviesByKeyword(query, page) {
   const res = await axios.get(
     `/search/movie/?api_key=${KEY}&query=${query}&page=${page}&include_adult=false`
   );
-  return res.data;
+  return res.data.results;
 }

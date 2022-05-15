@@ -1,6 +1,7 @@
 .list {
   display: flex;
   margin: -15px;
+  padding: 7px;
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
@@ -21,6 +22,7 @@
 
 .info {
   padding: 4px;
+  color: #dbdbdbe1;
 }
 
 .name {

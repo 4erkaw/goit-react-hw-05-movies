@@ -1,23 +1,38 @@
 import MovieInfo from './MovieInfo';
-import GoBack from './../GoBack/GoBack';
 import s from './Movie.module.css';
-import { NavLink, useLocation, Outlet } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { fetchMovieById } from 'services/MoviesAPI';
+import { NavLink, Outlet, useParams } from 'react-router-dom';
 import Container from 'components/Container';
 
 const setActive = ({ isActive }) => (isActive ? s.active : s.link);
 
 export default function Movie() {
-  const { pathname } = useLocation();
+  const [movie, setMovie] = useState(null);
+  const { movieId } = useParams();
+  async function loadMovieById() {
+    try {
+      const res = await fetchMovieById(movieId);
+      setMovie(res);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    loadMovieById();
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <>
-      <MovieInfo />
-      <GoBack />
+      <MovieInfo movie={movie} />
       <Container>
-        <h3>Additional infotmation</h3>
-        <NavLink className={setActive} to={`${pathname}/cast`}>
+        <h3 style={{ color: '#dbdbdbe1' }}>Additional infotmation</h3>
+        <NavLink className={setActive} to={`/movies/${movieId}/cast`}>
           Cast
         </NavLink>
-        <NavLink className={setActive} to={`${pathname}/reviews`}>
+        <NavLink className={setActive} to={`/movies/${movieId}/reviews`}>
           Reviews
         </NavLink>
         <Outlet />

@@ -1,26 +1,8 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { fetchMovieById } from 'services/MoviesAPI';
 import imgNotFound from '../Images/imgNotFound.png';
 import s from './MovieInfo.module.css';
+import GoBack from '../GoBack';
 
-export default function MovieInfo() {
-  const [movie, setMovie] = useState(null);
-  const { movieId } = useParams();
-
-  async function loadMovieById() {
-    try {
-      const res = await fetchMovieById(movieId);
-      setMovie(res);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  useEffect(() => {
-    loadMovieById();
-  }, []);
-
+export default function MovieInfo({ movie, path }) {
   const {
     title,
     name,
@@ -47,8 +29,8 @@ export default function MovieInfo() {
             />
             <div className={s.contentWrapper}>
               <h2 className={s.title}>
-                {title || name}(
-                {new Date(release_date || first_air_date).getFullYear()})
+                {title || name}{' '}
+                {new Date(release_date || first_air_date).getFullYear() || ''}
               </h2>
               <p className={s.text}>User Score: {vote_average * 10}%</p>
               <h2 className={s.title}>Overview</h2>
@@ -63,6 +45,7 @@ export default function MovieInfo() {
               ) : (
                 <p>Genres Unavailable</p>
               )}
+              <GoBack />
             </div>
           </div>
         </>

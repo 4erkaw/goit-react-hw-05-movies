@@ -1,0 +1,18 @@
+.list {
+  max-width: 60%;
+  padding: 7px;
+  margin-bottom: -15px;
+}
+
+.item {
+  padding: 5px;
+  border: 1px solid #dbdbdbe1;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  color: #dbdbdbe1;
+}
+
+.author {
+  margin-bottom: 10px;
+}

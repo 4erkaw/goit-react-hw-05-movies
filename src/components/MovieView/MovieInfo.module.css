@@ -1,11 +1,12 @@
 .wrapper {
   padding: 5px;
-  border-bottom: 1px solid rgb(87, 87, 87);
+  border-bottom: 1px solid #dbdbdbe1;
 }
 
 .cardWrapper {
   composes: wrapper;
   display: flex;
+  position: relative;
 }
 
 .item {
@@ -18,6 +19,7 @@
 
 .contentWrapper {
   margin-left: 20px;
+  color: #dbdbdbe1;
 }
 
 .text,

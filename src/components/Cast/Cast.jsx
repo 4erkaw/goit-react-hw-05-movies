@@ -19,29 +19,34 @@ export default function Cast() {
 
   useEffect(() => {
     loadMovieCast();
+    // eslint-disable-next-line
   }, []);
-
-  if (!castList.length) {
-    return;
-  }
 
   return (
     <ul className={s.list}>
-      {castList.map(({ name, character, profile_path, id }) => {
-        return (
-          <li key={id} className={s.item}>
-            <img
-              width="100%"
-              src={profile_path ? IMG_URL + profile_path : imgNotFound}
-              alt={name}
-            ></img>
-            <div className={s.info}>
-              <p className={s.name}>{name}</p>
-              <p>Character: {character}</p>
-            </div>
-          </li>
-        );
-      })}
+      {castList?.length ? (
+        castList.map(({ name, character, profile_path, id }) => {
+          return (
+            <li key={id} className={s.item}>
+              <img
+                width="100%"
+                src={profile_path ? IMG_URL + profile_path : imgNotFound}
+                alt={name}
+              ></img>
+              <div className={s.info}>
+                <p className={s.name}>{name}</p>
+                <p>Character: {character}</p>
+              </div>
+            </li>
+          );
+        })
+      ) : (
+        <li style={{ marginTop: '15px' }}>
+          <p style={{ color: '#dbdbdbe1' }}>
+            There is no information about casts
+          </p>
+        </li>
+      )}
     </ul>
   );
 }

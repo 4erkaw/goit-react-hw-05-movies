@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <>
       <Title title="day trandings" />
-      <MoviesList movies={moviesTrend}></MoviesList>
+      <MoviesList movies={moviesTrend} />
     </>
   );
 }

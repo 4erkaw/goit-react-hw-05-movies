@@ -3,7 +3,7 @@
   text-decoration: none;
   padding: 12px;
   font-weight: 500;
-  color: #2a363b;
+  color: #dbdbdbe1;
   font-size: 18px;
   transition: color 250ms linear;
 }
@@ -14,5 +14,5 @@
 
 .active {
   composes: link;
-  color: #adff2f;
+  color: #ffa500;
 }
