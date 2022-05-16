@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import imgNotFound from '../Images/imgNotFound.png';
@@ -26,3 +27,14 @@ export default function MoviesList({ movies }) {
     </ul>
   );
 }
+
+MoviesList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      id: PropTypes.number,
+      poster_path: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
+};

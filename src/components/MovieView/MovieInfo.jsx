@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import imgNotFound from '../Images/imgNotFound.png';
 import s from './MovieInfo.module.css';
 import { useLocation } from 'react-router-dom';
 import GoBack from '../GoBack';
 
-export default function MovieInfo({ movie, path }) {
+export default function MovieInfo({ movie }) {
   const location = useLocation();
 
   const getPath = location => {
@@ -64,3 +65,20 @@ export default function MovieInfo({ movie, path }) {
     </>
   );
 }
+
+MovieInfo.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string,
+    name: PropTypes.string,
+    release_date: PropTypes.string,
+    first_air_date: PropTypes.number,
+    overview: PropTypes.string,
+    vote_average: PropTypes.number,
+    poster_path: PropTypes.string,
+    genres: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+      })
+    ),
+  }),
+};

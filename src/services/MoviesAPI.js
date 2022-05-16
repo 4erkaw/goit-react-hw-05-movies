@@ -30,3 +30,20 @@ export async function fetchMoviesByKeyword(query, page) {
   );
   return res.data.results;
 }
+
+fetchMovieById.propTypes = {
+  id: PropTypes.number.isRequired,
+};
+
+fetchMovieCast.propTypes = {
+  id: PropTypes.number.isRequired,
+};
+
+fetchMovieReviews.propTypes = {
+  id: PropTypes.number.isRequired,
+};
+
+fetchMoviesByKeyword.propTypes = {
+  query: PropTypes.string.isRequired,
+  page: PropTypes.number,
+};

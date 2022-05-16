@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useNavigate } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
 import s from './GoBack.module.css';
@@ -9,4 +10,8 @@ export default function GoBack({ path }) {
       <BiArrowBack className={s.arrow} />
     </button>
   );
+}
+
+GoBack.propTypes = {
+  path: PropTypes.string.isRequired
 }
