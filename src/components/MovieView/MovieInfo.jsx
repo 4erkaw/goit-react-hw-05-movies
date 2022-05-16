@@ -1,8 +1,19 @@
 import imgNotFound from '../Images/imgNotFound.png';
 import s from './MovieInfo.module.css';
+import { useLocation } from 'react-router-dom';
 import GoBack from '../GoBack';
 
 export default function MovieInfo({ movie, path }) {
+  const location = useLocation();
+
+  const getPath = location => {
+    if (location.state) {
+      const { pathname = '/', search = null } = location.state;
+      const path = pathname + search;
+      return path;
+    } else return '/';
+  };
+
   const {
     title,
     name,
@@ -45,7 +56,7 @@ export default function MovieInfo({ movie, path }) {
               ) : (
                 <p>Genres Unavailable</p>
               )}
-              <GoBack />
+              <GoBack path={getPath(location)} />
             </div>
           </div>
         </>

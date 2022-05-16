@@ -26,7 +26,7 @@ export async function fetchMovieReviews(id) {
 
 export async function fetchMoviesByKeyword(query, page) {
   const res = await axios.get(
-    `/search/movie/?api_key=${KEY}&query=${query}&page=${page}&include_adult=false`
+    `/search/movie?api_key=${KEY}&query=${query}&page=${page}`
   );
   return res.data.results;
 }

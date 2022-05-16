@@ -2,7 +2,7 @@ import MovieInfo from './MovieInfo';
 import s from './Movie.module.css';
 import { useState, useEffect } from 'react';
 import { fetchMovieById } from 'services/MoviesAPI';
-import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
 import Container from 'components/Container';
 
 const setActive = ({ isActive }) => (isActive ? s.active : s.link);
@@ -10,6 +10,7 @@ const setActive = ({ isActive }) => (isActive ? s.active : s.link);
 export default function Movie() {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
+  const location = useLocation();
   async function loadMovieById() {
     try {
       const res = await fetchMovieById(movieId);
@@ -29,10 +30,18 @@ export default function Movie() {
       <MovieInfo movie={movie} />
       <Container>
         <h3 style={{ color: '#dbdbdbe1' }}>Additional infotmation</h3>
-        <NavLink className={setActive} to={`/movies/${movieId}/cast`}>
+        <NavLink
+          className={setActive}
+          to={`/movies/${movieId}/cast`}
+          state={location.state}
+        >
           Cast
         </NavLink>
-        <NavLink className={setActive} to={`/movies/${movieId}/reviews`}>
+        <NavLink
+          className={setActive}
+          to={`/movies/${movieId}/reviews`}
+          state={location.state}
+        >
           Reviews
         </NavLink>
         <Outlet />
