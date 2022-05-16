@@ -1,10 +1,8 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
-import Searchbar from '../components/Searchbar';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { fetchMoviesByKeyword } from '../services/MoviesAPI';
-import Loader from 'components/Loader';
-
-const MoviesList = lazy(() => import('../components/MoviesList'));
+import MoviesList from 'components/MoviesList';
+import Searchbar from '../components/Searchbar';
 
 export default function Movies() {
   const [page, setPage] = useState(1);
@@ -36,9 +34,7 @@ export default function Movies() {
   return (
     <>
       <Searchbar saveSubmit={saveSubmit} />
-      <Suspense fallback={<Loader />}>
-        <MoviesList movies={searchedMovies} />
-      </Suspense>
+      <MoviesList movies={searchedMovies} />
     </>
   );
 }

@@ -1,9 +1,9 @@
-import MovieInfo from './MovieInfo';
-import s from './Movie.module.css';
 import { useState, useEffect } from 'react';
-import { fetchMovieById } from 'services/MoviesAPI';
+import { fetchMovieById } from '../services/MoviesAPI';
 import { NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
-import Container from 'components/Container';
+import MovieInfo from '../components/MovieInfo';
+import Container from '../components/Container';
+import s from './Movie.module.css';
 
 const setActive = ({ isActive }) => (isActive ? s.active : s.link);
 

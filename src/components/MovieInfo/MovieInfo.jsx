@@ -1,8 +1,8 @@
+import GoBack from '../GoBack';
 import PropTypes from 'prop-types';
 import imgNotFound from '../Images/imgNotFound.png';
-import s from './MovieInfo.module.css';
 import { useLocation } from 'react-router-dom';
-import GoBack from '../GoBack';
+import s from './MovieInfo.module.css';
 
 export default function MovieInfo({ movie }) {
   const location = useLocation();

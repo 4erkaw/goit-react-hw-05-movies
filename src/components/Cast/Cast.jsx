@@ -1,8 +1,8 @@
-import s from './Cast.module.css';
-import imgNotFound from '../Images/imgNotFound.png';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieCast, IMG_URL } from '../../services/MoviesAPI';
+import imgNotFound from '../Images/imgNotFound.png';
+import s from './Cast.module.css';
 
 export default function Cast() {
   const [castList, setCastList] = useState({});

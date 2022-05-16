@@ -3,7 +3,7 @@ import { lazy, Suspense, Fragment } from 'react';
 import Layout from './Layout';
 import Loader from './Loader';
 
-const Movie = lazy(() => import('./MovieView'));
+const Movie = lazy(() => import('../views/Movie'));
 const Home = lazy(() => import('../views/Home'));
 const Movies = lazy(() => import('../views/Movies'));
 const NotFound = lazy(() => import('../views/NotFound'));
